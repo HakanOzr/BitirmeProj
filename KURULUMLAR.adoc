@@ -121,5 +121,30 @@ MongoDB durdurmak için *Control+C* komutu terminalde uygulanır.
 
 
 
+== UML Diyagramı
+
+image::images/UML.png[]
+
+E-mail bağlantı kurulumunu anlatan bu UML diyagramında E-mail gönderilir Şifrelenmiş yada normal olarak ayrılır.
+
+E-mail bağlantı kurulumundan sonra cevap alınır gönderdikten 2 saat süre geçer cevap yok ise hataya düşer.
+
+Geçerli cevap gelir ise Bağlantı Kurulumu başarılıdır.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
