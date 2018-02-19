@@ -1,0 +1,125 @@
+[colophon]
+== NodeJS Kurulumu
+
+Node.js terminalden kurulum için ilk önce HomeBrew denen MacOS için özel olan paket yöneticisini kuruyoruz HomeBrew kurulumu için terminal açılır ve şu kodlar girilir :
+
+
+----
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+----
+
+image::Desktop/2.png[]
+
+HomeBrew kurulumu tamamlandıktan sonra terminal Node.js kurulumu için hazırdır ve terminale şu kod parçası yazılır :
+
+
+----
+brew install node
+----
+
+image::Desktop/1.png[]
+
+NodeJS kurulumu tamamlandıktan sonra kurulumun başarıyla tamamlandığını anlamak için terminale şu kod parçası yazılır ve versiyon çıktısı alınıyorsa kurulum doğru tamamlanmıştır :
+
+
+----
+node -v
+----
+
+image::Desktop/Kurulum.png[]
+
+
+== ExpressJS Kurulumu
+
+ExpressJS kurulumundan önce NodeJS kurulumu tamamlanmalıdır.NodeJS kurulumu tamamlandıktan sonra
+Terminal açılır ve :
+
+
+----
+mkdir myapp
+----
+
+yazarak sistemde MacOS'ta standart konumda klasör oluşturulur.
+
+
+----
+cd myapp
+----
+
+komutu ile myapp klasörüne gidilir.
+
+
+----
+npm init
+----
+
+koduyla uygulamanızın ismi,versiyonu gibi özellikleri belirlersiniz ve uygulama için gerekli package.json dosyası oluşturulur.Eğer her seçimde direk return ile devam ederseniz default değerler verilir ( Uygulama adı index.js ya da versiyon 1.0.0 gibi )
+
+Şimdi son adım olarak Express'i myapp konumuna yüklemek kalıyor bunun için terminale şu kod parçası girilir :
+
+
+----
+npm install express --save
+----
+
+Kurulum tamamlanmıştır.
+
+image::images/3.png[]
+
+== MongoDB Kurulumu
+
+MongoDB HomeBrew aracılığı ile MacOS'a kolay bir şekilde kurulabiliyor.Kurulum için ilk önce HomeBrew güncellemesini kontrol ediyoruz.
+
+
+----
+brew update
+----
+
+
+Daha sonra MongoDB kurulumu için terminale şu kodu yazıyoruz :
+
+
+----
+brew install mongodb
+----
+
+image::images/4.png[]
+
+Kurulum tamamlandıktan sonra MongoDB'yi çalışır hale getirmek için aşağıdaki adımları uyguluyoruz.
+
+----
+sudo su
+----
+
+Bilgisayar şifresini girip admin yetkisini terminal için alıyoruz.
+
+
+----
+mkdir -p /data/db
+----
+
+kodu ile yeni bir dizin oluşturuyoruz mongod varsayılan olarak bu dizinde çalışıyor.
+
+
+----
+mongod
+----
+
+kodu ile MongoDB başlatılıyor.
+
+
+----
+[initandlisten] waiting for connections on port 27017
+----
+
+image::images/5.png[]
+
+yazısı mongod yazdıktan sonra terminalde en altta çıkıyorsa başarıyla çalışıyordur.
+
+MongoDB durdurmak için *Control+C* komutu terminalde uygulanır.
+
+
+
+
+
+
