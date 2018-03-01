@@ -1,0 +1,44 @@
+*CRAN ile Türkiye/Kocaeli Bölgesi İçin 10 Günlük Hava Tahmini* +
+
+İlk olarak devtools paketini kurmamız gerekmektedir.Onun için Rstudio konsoluna şunu yazıyoruz
+
+
+----
+install.packages("devtools")
+----
+image::images/install.png[]
+
+Daha sonra rwunderground paketini indirelim.
+
+----
+install.packages("rwunderground")
+
+----
+
+İlk olarak devtoolsu yüklemezseniz rwunderground yüklenmeyebilir bağlı paketler çünkü. +
+
+Hava durumu datalarını [underline]#http://https://www.wunderground.com/[www.wunderground.com]# aracılığı ile alacağız. rwunderground ise bu siteyle alakalı R için geliştirilmiş bir api. 
+
+Şimdi devtools ile apiyi kuralım.
+----
+devtools::install_github("ALShum/rwunderground")
+----
+
+image::images\install2.png[]
+
+
+Bu işlemleri tamamladıktan sonra [underline]#http://https://www.wunderground.com/[www.wunderground.com]# siteden üyelik alıp geliştirici üyeligine cevirelim ücretsiz olarak ordan api keyimizi alalım.Ve konsola yapıştıralım
+----
+rwunderground::set_api_key("KEY")
+----
+
+Lokasyonu tanıtalım.
+
+----
+set_location(territory = "Turkey", city = "Izmit")
+----
+Ve verileri çekelim ( 10 günlük ) 
+----
+forecast10day(set_location(territory = "Turkey", city = "Izmit"))
+----
+
